@@ -2716,5 +2716,28 @@ TABS.forEach(renderTab);
 
 })();
 </script>
+
+<!-- 串接：AI 提示詞生成器與 AI 教學工具入口（arch-code-review） -->
+<script>
+(function(){
+  try{
+    var box=document.createElement('div');
+    box.setAttribute('data-hub','1');
+    box.style.cssText='position:fixed;right:16px;bottom:16px;z-index:9999;display:flex;flex-direction:column;gap:7px;align-items:flex-end;font-family:"Microsoft JhengHei","微軟正黑體","PingFang TC","Noto Sans TC",system-ui,sans-serif';
+    function mk(t,u,primary){
+      var a=document.createElement('a');
+      a.href=u;a.target='_blank';a.rel='noopener';a.textContent=t;
+      a.style.cssText='display:inline-block;text-decoration:none;font-size:13.5px;font-weight:700;padding:9px 16px;border-radius:999px;'
+        +'box-shadow:0 2px 8px rgba(0,0,0,.18);white-space:nowrap;'
+        +(primary?'background:#1f4d3d;color:#f7f5f0;border:1px solid #1f4d3d':'background:#f7f5f0;color:#1f4d3d;border:1px solid #1f4d3d');
+      a.onmouseover=function(){a.style.opacity='.88'};a.onmouseout=function(){a.style.opacity='1'};
+      return a;
+    }
+    box.appendChild(mk('不知道怎麼問？取用 AI 提示詞','https://tangch-tw.github.io/arch-ai-prompts/',true));
+    box.appendChild(mk('其他 AI 教學工具','https://tangch-tw.github.io/arch-ai-hub/',false));
+    document.body.appendChild(box);
+  }catch(e){}
+})();
+</script>
 </body>
 </html>
